@@ -49,5 +49,15 @@ export const config: SceneConfig = {
 		skyBottom: '#16213e',
 		grassColour: '#27ae60',
 		timeOfDay: 'night'
+	},
+	info: {
+		whatYouDo: [
+			'Write code to build websites, apps, and games',
+			'Solve problems and fix bugs in software',
+			'Work in teams to plan and design new features',
+			'Test software to make sure it works properly'
+		],
+		keySkills: ['Logical thinking', 'Problem-solving', 'Teamwork', 'Creativity', 'Maths'],
+		subjects: ['Maths', 'Computer Science', 'Physics', 'Design & Technology']
 	}
 };

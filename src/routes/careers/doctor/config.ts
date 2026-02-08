@@ -49,5 +49,15 @@ export const config: SceneConfig = {
 		skyBottom: '#B0E0E6',
 		grassColour: '#2ECC71',
 		timeOfDay: 'day'
+	},
+	info: {
+		whatYouDo: [
+			'Diagnose illnesses and prescribe treatments',
+			'Examine patients and order medical tests',
+			'Work in hospitals, GP surgeries, or specialist clinics',
+			'Keep up with the latest medical research'
+		],
+		keySkills: ['Communication', 'Empathy', 'Science', 'Decision-making', 'Resilience'],
+		subjects: ['Biology', 'Chemistry', 'Maths', 'English']
 	}
 };

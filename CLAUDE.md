@@ -53,6 +53,11 @@ export const config: SceneConfig = {
 		skyBottom: '#B0E0E6',
 		grassColour: '#2ECC71',
 		timeOfDay: 'day'
+	},
+	info: {
+		whatYouDo: ['Look after sick and injured animals', 'Perform surgery and prescribe medicine'],
+		keySkills: ['Empathy', 'Science', 'Calm under pressure'],
+		subjects: ['Biology', 'Chemistry', 'Maths']
 	}
 };
 ```

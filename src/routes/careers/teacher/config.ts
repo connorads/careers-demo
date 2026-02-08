@@ -49,5 +49,15 @@ export const config: SceneConfig = {
 		skyBottom: '#AED6F1',
 		grassColour: '#2ECC71',
 		timeOfDay: 'day'
+	},
+	info: {
+		whatYouDo: [
+			'Plan and deliver lessons for primary or secondary pupils',
+			'Mark work, give feedback, and track progress',
+			'Support students with different learning needs',
+			'Run clubs, trips, and extracurricular activities'
+		],
+		keySkills: ['Communication', 'Patience', 'Organisation', 'Creativity', 'Leadership'],
+		subjects: ['English', 'Maths', 'Any subject you love', 'Psychology']
 	}
 };

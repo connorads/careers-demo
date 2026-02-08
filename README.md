@@ -24,9 +24,8 @@ See [CLAUDE.md](./CLAUDE.md) for the full type reference and example.
 
 ## TODO
 
-- [ ] Fix architect career page — sunset sky/building colours need tweaking
-- [ ] Add more career-specific content to each scene (info panels, facts, day-in-the-life bullet points)
-- [ ] Add a "what does this career involve?" section with key skills and subjects
+- [x] Fix architect career page — sunset sky/building colours
+- [x] Add info panels with what you do, key skills, and useful subjects
 - [ ] More seed careers (e.g. veterinarian, musician, chef, scientist)
 - [ ] Responsive layout improvements for mobile/tablet
 - [ ] Accessibility — keyboard navigation, screen reader labels, reduced motion support

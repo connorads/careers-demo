@@ -28,6 +28,13 @@ export type Environment = {
 	readonly timeOfDay: TimeOfDay;
 };
 
+/** Career info panel with key skills and subjects */
+export type CareerInfo = {
+	readonly whatYouDo: readonly string[];
+	readonly keySkills: readonly string[];
+	readonly subjects: readonly string[];
+};
+
 /** Full configuration for a career scene */
 export type SceneConfig = {
 	readonly title: string;
@@ -37,4 +44,5 @@ export type SceneConfig = {
 	readonly character: Character;
 	readonly buildings: readonly Building[];
 	readonly environment: Environment;
+	readonly info: CareerInfo;
 };

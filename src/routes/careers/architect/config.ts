@@ -14,40 +14,50 @@ export const config: SceneConfig = {
 	character: {
 		name: 'Archie',
 		hatEmoji: '⛑️',
-		bodyColour: '#F39C12',
+		bodyColour: '#D4A017',
 		toolEmoji: '📐',
-		legColour: '#7F8C8D'
+		legColour: '#5D6D7E'
 	},
 	buildings: [
 		{
 			name: 'Design Studio',
 			emoji: '✏️',
-			colour: '#F1C40F',
-			roofColour: '#D4AC0D',
+			colour: '#D5A253',
+			roofColour: '#B8860B',
 			width: 120,
 			height: 150
 		},
 		{
 			name: 'Construction Site',
 			emoji: '🏗️',
-			colour: '#E67E22',
-			roofColour: '#CA6F1E',
+			colour: '#CD6839',
+			roofColour: '#A0522D',
 			width: 130,
 			height: 130
 		},
 		{
 			name: 'City Hall',
 			emoji: '🏛️',
-			colour: '#BDC3C7',
-			roofColour: '#95A5A6',
+			colour: '#8E9AAF',
+			roofColour: '#6C757D',
 			width: 140,
 			height: 160
 		}
 	],
 	environment: {
-		skyTop: '#FF6B35',
-		skyBottom: '#FFB347',
-		grassColour: '#58D68D',
+		skyTop: '#C84B31',
+		skyBottom: '#ECAC5F',
+		grassColour: '#4A7C59',
 		timeOfDay: 'sunset'
+	},
+	info: {
+		whatYouDo: [
+			'Design homes, schools, offices, and public spaces',
+			'Create blueprints, 3D models, and planning applications',
+			'Work with structural engineers to keep buildings safe',
+			'Visit construction sites to check builds match designs'
+		],
+		keySkills: ['Creativity', 'Maths', 'Problem-solving', 'Attention to detail', 'Drawing'],
+		subjects: ['Maths', 'Art & Design', 'Physics', 'Design & Technology']
 	}
 };

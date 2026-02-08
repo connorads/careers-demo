@@ -300,4 +300,35 @@
 			></div>
 		</div>
 	</div>
+
+	<!-- ── Info panel ── -->
+	<div
+		class="absolute right-4 bottom-4 z-30 w-72 rounded-2xl bg-white/90 p-5 shadow-xl backdrop-blur-sm"
+		style="animation: bannerSlideIn 1s ease-out 0.5s both"
+	>
+		<h2 class="mb-3 text-lg font-bold text-gray-800">
+			{config.icon} What does a {config.title} do?
+		</h2>
+		<ul class="mb-3 space-y-1 text-sm text-gray-700">
+			{#each config.info.whatYouDo as item (item)}
+				<li>• {item}</li>
+			{/each}
+		</ul>
+		<h3 class="mb-1 text-xs font-bold tracking-wide text-gray-500 uppercase">Key Skills</h3>
+		<div class="mb-3 flex flex-wrap gap-1">
+			{#each config.info.keySkills as skill (skill)}
+				<span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-800">
+					{skill}
+				</span>
+			{/each}
+		</div>
+		<h3 class="mb-1 text-xs font-bold tracking-wide text-gray-500 uppercase">Useful Subjects</h3>
+		<div class="flex flex-wrap gap-1">
+			{#each config.info.subjects as subject (subject)}
+				<span class="rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800">
+					{subject}
+				</span>
+			{/each}
+		</div>
+	</div>
 </div>
