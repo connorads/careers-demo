@@ -1,42 +1,34 @@
-# sv
+# Careers Town
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+An interactive educational app where young people can explore different careers through animated town scenes — and watch AI and coding in action as new careers are created live.
 
-## Creating a project
+Built with SvelteKit, Svelte 5, Tailwind CSS 4, and deployed to Cloudflare Workers.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Getting started
 
-```sh
-# create a new project
-npx sv create my-app
+```bash
+bun install
+bun run dev
 ```
 
-To recreate this project with the same configuration:
+## Adding a new career
 
-```sh
-# recreate this project
-bun x sv create --template minimal --types ts --add prettier eslint vitest="usages:unit,component" tailwindcss="plugins:none" playwright --install bun careers-demo
-```
+Create two files in `src/routes/careers/{slug}/`:
 
-## Developing
+1. `config.ts` — the career data (buildings, character, colours, speech bubbles)
+2. `+page.svelte` — a short wrapper that renders the scene
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Copy an existing career folder as a template. The home page auto-discovers new careers — no registry to update.
 
-```sh
-npm run dev
+See [CLAUDE.md](./CLAUDE.md) for the full type reference and example.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Scripts
 
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+| Command          | Description                  |
+| ---------------- | ---------------------------- |
+| `bun run dev`    | Start dev server             |
+| `bun run build`  | Production build             |
+| `bun run check`  | TypeScript check             |
+| `bun run lint`   | Lint + format check          |
+| `bun run test`   | Unit + e2e tests             |
+| `bun run deploy` | Build + deploy to Cloudflare |
