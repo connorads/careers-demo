@@ -22,6 +22,16 @@ Copy an existing career folder as a template. The home page auto-discovers new c
 
 See [CLAUDE.md](./CLAUDE.md) for the full type reference and example.
 
+## TODO
+
+- [ ] Fix architect career page — sunset sky/building colours need tweaking
+- [ ] Add more career-specific content to each scene (info panels, facts, day-in-the-life bullet points)
+- [ ] Add a "what does this career involve?" section with key skills and subjects
+- [ ] More seed careers (e.g. veterinarian, musician, chef, scientist)
+- [ ] Responsive layout improvements for mobile/tablet
+- [ ] Accessibility — keyboard navigation, screen reader labels, reduced motion support
+- [ ] Deploy to production on Cloudflare
+
 ## Scripts
 
 | Command          | Description                  |
