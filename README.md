@@ -26,9 +26,10 @@ See [CLAUDE.md](./CLAUDE.md) for the full type reference and example.
 
 - [x] Fix architect career page — sunset sky/building colours
 - [x] Add info panels with what you do, key skills, and useful subjects
-- [ ] More seed careers (e.g. veterinarian, musician, chef, scientist)
+- [x] More seed careers — now 10 careers (architect, astronaut, chef, doctor, firefighter, game designer, musician, software engineer, teacher, veterinarian)
+- [x] Accessibility — reduced motion support (`prefers-reduced-motion`)
 - [ ] Responsive layout improvements for mobile/tablet
-- [ ] Accessibility — keyboard navigation, screen reader labels, reduced motion support
+- [ ] Accessibility — keyboard navigation, screen reader labels
 - [ ] Deploy to production on Cloudflare
 
 ## Scripts
