@@ -45,4 +45,6 @@ export type SceneConfig = {
 	readonly buildings: readonly Building[];
 	readonly environment: Environment;
 	readonly info: CareerInfo;
+	/** Click the character to show a random fun fact */
+	readonly funFacts?: readonly string[];
 };

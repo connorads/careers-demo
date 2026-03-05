@@ -50,6 +50,11 @@ export const config: SceneConfig = {
 		grassColour: '#4A7C59',
 		timeOfDay: 'sunset'
 	},
+	funFacts: [
+		'The Burj Khalifa took 6 years to build and is 828 metres tall!',
+		'Ancient Roman concrete is still stronger than most modern mixes',
+		'Architects spend about 7 years training before they qualify'
+	],
 	info: {
 		whatYouDo: [
 			'Design homes, schools, offices, and public spaces',

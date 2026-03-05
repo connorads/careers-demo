@@ -67,6 +67,19 @@
 	const flowerPositions = [12, 25, 42, 65, 88];
 
 	const articleForTitle = $derived(/^[aeiou]/i.test(config.title) ? 'an' : 'a');
+
+	// ── Fun facts on character click ──
+	let funFact = $state<string | null>(null);
+	let funFactTimeout = $state<ReturnType<typeof setTimeout> | null>(null);
+
+	function showRandomFact() {
+		if (!config.funFacts?.length) return;
+		if (funFactTimeout) clearTimeout(funFactTimeout);
+		funFact = config.funFacts[Math.floor(Math.random() * config.funFacts.length)];
+		funFactTimeout = setTimeout(() => {
+			funFact = null;
+		}, 4000);
+	}
 </script>
 
 <svelte:head>
@@ -282,9 +295,15 @@
 	</div>
 
 	<!-- ── Character ── -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		class="absolute bottom-[13%] z-10"
-		style="left: {characterX}%; transition: left 0.05s linear; animation: characterBob 1s ease-in-out infinite"
+		style="left: {characterX}%; transition: left 0.05s linear; animation: characterBob 1s ease-in-out infinite; cursor: {config
+			.funFacts?.length
+			? 'pointer'
+			: 'default'}"
+		onclick={showRandomFact}
+		onkeydown={(e) => e.key === 'Enter' && showRandomFact()}
 	>
 		<div class="flex flex-col items-center" style="transform: scaleX({walkingRight ? 1 : -1})">
 			<!-- Hat -->
@@ -345,5 +364,18 @@
 				class="absolute -bottom-2 left-1/2 h-0 w-0 -translate-x-1/2 border-x-8 border-t-8 border-x-transparent border-t-white"
 			></div>
 		</div>
+
+		<!-- Fun fact popup -->
+		{#if funFact}
+			<div
+				class="absolute -top-28 left-1/2 z-30 -translate-x-1/2 rounded-xl bg-yellow-300 px-4 py-2 text-xs font-bold whitespace-nowrap text-yellow-900 shadow-lg"
+				style="animation: funFactPop 0.3s ease-out both"
+			>
+				💡 {funFact}
+				<div
+					class="absolute -bottom-2 left-1/2 h-0 w-0 -translate-x-1/2 border-x-8 border-t-8 border-x-transparent border-t-yellow-300"
+				></div>
+			</div>
+		{/if}
 	</div>
 </div>

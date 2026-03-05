@@ -50,6 +50,11 @@ export const config: SceneConfig = {
 		grassColour: '#4A7C59',
 		timeOfDay: 'sunset'
 	},
+	funFacts: [
+		'Firefighter gear weighs about 30 kg — like carrying a child!',
+		'Dalmatians became fire dogs because they calmed the horses',
+		'Modern fire engines carry over 1,800 litres of water'
+	],
 	info: {
 		whatYouDo: [
 			'Respond to fires, accidents, and emergencies',

@@ -50,6 +50,11 @@ export const config: SceneConfig = {
 		grassColour: '#2ECC71',
 		timeOfDay: 'day'
 	},
+	funFacts: [
+		'Your body has about 100,000 km of blood vessels!',
+		'The heart beats around 100,000 times every single day',
+		'It takes at least 10 years of training to become a hospital consultant'
+	],
 	info: {
 		whatYouDo: [
 			'Diagnose illnesses and prescribe treatments',

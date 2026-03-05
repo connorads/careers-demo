@@ -185,6 +185,18 @@
 	}
 }
 
+/* ── Fun fact popup ── */
+@keyframes funFactPop {
+	0% {
+		opacity: 0;
+		transform: translateX(-50%) scale(0.7);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-50%) scale(1);
+	}
+}
+
 /* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
 	*,

@@ -50,6 +50,11 @@ export const config: SceneConfig = {
 		grassColour: '#4A7C59',
 		timeOfDay: 'sunset'
 	},
+	funFacts: [
+		'Michelin stars were invented by a tyre company to get people driving!',
+		'Chefs taste food about 30 times during a single service',
+		'The most expensive pizza costs over £9,000'
+	],
 	info: {
 		whatYouDo: [
 			'Plan menus and create new recipes',

@@ -50,6 +50,11 @@ export const config: SceneConfig = {
 		grassColour: '#2ECC71',
 		timeOfDay: 'day'
 	},
+	funFacts: [
+		'Teachers make about 1,500 decisions every school day!',
+		'Finland gives teachers the same status as doctors and lawyers',
+		'The word "school" comes from the Greek word for leisure'
+	],
 	info: {
 		whatYouDo: [
 			'Plan and deliver lessons for primary or secondary pupils',

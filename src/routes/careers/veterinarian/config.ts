@@ -50,6 +50,11 @@ export const config: SceneConfig = {
 		grassColour: '#2ECC71',
 		timeOfDay: 'day'
 	},
+	funFacts: [
+		'Dogs can smell diseases like cancer and diabetes!',
+		'A cat has 230 bones — humans only have 206',
+		'Vets treat everything from hamsters to elephants'
+	],
 	info: {
 		whatYouDo: [
 			'Diagnose and treat sick or injured animals',

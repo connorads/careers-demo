@@ -50,6 +50,11 @@ export const config: SceneConfig = {
 		grassColour: '#27ae60',
 		timeOfDay: 'night'
 	},
+	funFacts: [
+		'The first computer bug was an actual moth found in a machine in 1947!',
+		'There are over 700 programming languages in the world',
+		'The average app has about 50,000 lines of code'
+	],
 	info: {
 		whatYouDo: [
 			'Write code to build websites, apps, and games',

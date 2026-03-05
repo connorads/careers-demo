@@ -50,6 +50,11 @@ export const config: SceneConfig = {
 		grassColour: '#1E8449',
 		timeOfDay: 'night'
 	},
+	funFacts: [
+		'Music can change your heart rate to match the tempo!',
+		'The longest concert ever lasted 453 hours',
+		'Spotify has over 100 million tracks available to stream'
+	],
 	info: {
 		whatYouDo: [
 			'Write, compose, and perform original music',

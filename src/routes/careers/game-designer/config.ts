@@ -50,6 +50,11 @@ export const config: SceneConfig = {
 		grassColour: '#1E8449',
 		timeOfDay: 'night'
 	},
+	funFacts: [
+		'Minecraft was created by one person in just 6 days!',
+		'The gaming industry is bigger than films and music combined',
+		'The average game takes 3–5 years to develop'
+	],
 	info: {
 		whatYouDo: [
 			'Design characters, levels, and game mechanics',

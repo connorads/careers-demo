@@ -50,6 +50,11 @@ export const config: SceneConfig = {
 		grassColour: '#1E8449',
 		timeOfDay: 'night'
 	},
+	funFacts: [
+		'Astronauts grow up to 5 cm taller in space!',
+		'A spacesuit costs about £10 million to make',
+		'The ISS travels at 28,000 km/h — that is 16 sunrises a day'
+	],
 	info: {
 		whatYouDo: [
 			'Travel to space aboard rockets and spacecraft',
