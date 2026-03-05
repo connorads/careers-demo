@@ -65,6 +65,8 @@
 	const sparkleIndices = [0, 1, 2, 3, 4, 5];
 	const treePositions = [5, 30, 55, 80, 95];
 	const flowerPositions = [12, 25, 42, 65, 88];
+
+	const articleForTitle = $derived(/^[aeiou]/i.test(config.title) ? 'an' : 'a');
 </script>
 
 <svelte:head>
@@ -80,7 +82,7 @@
 	<div class="relative z-20 py-4 text-center" style="animation: bannerSlideIn 0.8s ease-out both">
 		<a
 			href={resolve('/')}
-			class="mb-2 inline-block rounded-full bg-white/20 px-4 py-1 text-sm text-white no-underline backdrop-blur-sm transition-colors hover:bg-white/30"
+			class="mb-2 inline-block rounded-full bg-white/20 px-5 py-2 text-base text-white no-underline backdrop-blur-sm transition-colors hover:bg-white/30"
 		>
 			← Back to Careers Town
 		</a>
@@ -90,7 +92,9 @@
 			</span>
 			{config.title}
 		</h1>
-		<p class="mt-1 text-lg text-white/80">{config.tagline}</p>
+		<p class="mt-1 text-lg text-white/80" style="text-shadow: 0 1px 4px rgba(0,0,0,0.4)">
+			{config.tagline}
+		</p>
 	</div>
 
 	<!-- ── Sun / Moon ── -->
@@ -201,7 +205,8 @@
 		>
 			<div class="flex-1">
 				<h2 class="mb-2 text-base font-bold text-gray-800">
-					{config.icon} What does a {config.title} do?
+					{config.icon} What does {articleForTitle}
+					{config.title} do?
 				</h2>
 				<ul class="space-y-0.5 text-sm text-gray-700">
 					{#each config.info.whatYouDo as item (item)}
