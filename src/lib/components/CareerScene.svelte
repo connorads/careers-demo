@@ -86,10 +86,11 @@
 	<title>{config.icon} {config.title} — Careers Town</title>
 </svelte:head>
 
+<div class="flex min-h-screen flex-col font-[Fredoka]">
+<!-- ── Scene area ── -->
 <div
-	class="relative min-h-screen overflow-hidden font-[Fredoka]"
-	style="background: linear-gradient(to bottom, {config.environment.skyTop}, {config.environment
-		.skyBottom})"
+	class="relative h-[60vh] shrink-0 overflow-hidden md:h-screen"
+	style="background: red"
 >
 	<!-- ── Banner ── -->
 	<div class="relative z-20 py-4 text-center" style="animation: bannerSlideIn 0.8s ease-out both">
@@ -113,7 +114,7 @@
 	<!-- ── Sun / Moon ── -->
 	{#if isNight}
 		<div
-			class="absolute top-16 right-12 z-10 text-6xl"
+			class="absolute top-12 right-4 z-10 text-4xl sm:top-16 sm:right-12 sm:text-6xl"
 			style="animation: sunPulse 4s ease-in-out infinite"
 		>
 			🌙
@@ -130,14 +131,14 @@
 		{/each}
 	{:else if isSunset}
 		<div
-			class="absolute top-20 right-16 z-10 text-7xl"
+			class="absolute top-16 right-6 z-10 text-5xl sm:top-20 sm:right-16 sm:text-7xl"
 			style="animation: sunPulse 4s ease-in-out infinite; filter: hue-rotate(20deg)"
 		>
 			🌅
 		</div>
 	{:else}
 		<div
-			class="absolute top-16 right-12 z-10 text-7xl"
+			class="absolute top-12 right-4 z-10 text-5xl sm:top-16 sm:right-12 sm:text-7xl"
 			style="animation: sunPulse 4s ease-in-out infinite"
 		>
 			☀️
@@ -208,13 +209,13 @@
 		</div>
 	{/each}
 
-	<!-- ── Info panel ── -->
+	<!-- ── Info panel (desktop overlay) ── -->
 	<div
-		class="absolute right-0 bottom-[52%] left-0 z-10 flex justify-center px-4"
+		class="absolute top-[130px] right-0 left-0 z-30 hidden justify-center px-4 md:flex md:top-[170px]"
 		style="animation: bannerSlideIn 1s ease-out 0.5s both"
 	>
 		<div
-			class="flex max-w-3xl items-start gap-6 rounded-2xl bg-white/90 px-6 py-4 shadow-xl backdrop-blur-sm"
+			class="flex max-w-3xl flex-row items-start gap-6 rounded-2xl bg-white/90 px-6 py-4 shadow-xl backdrop-blur-sm"
 		>
 			<div class="flex-1">
 				<h2 class="mb-2 text-base font-bold text-gray-800">
@@ -251,47 +252,56 @@
 	</div>
 
 	<!-- ── Buildings ── -->
-	<div class="absolute right-0 bottom-[20%] left-0 z-[5] flex items-end justify-center gap-6 px-8">
-		{#each config.buildings as building, i (building.name)}
-			<div class="origin-bottom" style="animation: buildingBounceIn 0.6s ease-out {i * 0.15}s both">
-				<!-- Roof -->
+	<div
+		class="absolute right-0 bottom-[20%] left-0 z-[5] flex items-end justify-center px-2 sm:px-8"
+	>
+		<div
+			class="flex origin-bottom scale-[0.6] items-end justify-center gap-2 sm:scale-[0.85] sm:gap-6 md:scale-100"
+		>
+			{#each config.buildings as building, i (building.name)}
 				<div
-					class="mx-auto rounded-t-xl"
-					style="width: {building.width}px; height: 20px; background: {building.roofColour}"
-				></div>
-				<!-- Body -->
-				<div
-					class="relative rounded-b-lg"
-					style="width: {building.width}px; height: {building.height}px; background: {building.colour}"
+					class="origin-bottom"
+					style="animation: buildingBounceIn 0.6s ease-out {i * 0.15}s both"
 				>
-					<!-- Emoji sign -->
-					<div class="pt-2 text-center text-3xl">{building.emoji}</div>
-					<!-- Name -->
+					<!-- Roof -->
 					<div
-						class="mt-1 text-center text-xs font-bold text-white drop-shadow"
-						style="text-shadow: 0 1px 2px rgba(0,0,0,0.3)"
-					>
-						{building.name}
-					</div>
-					<!-- Windows -->
-					<div class="mt-2 flex justify-center gap-2">
-						<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
-						{#each { length: Math.min(3, Math.floor(building.width / 40)) } as _, w (w)}
-							<div
-								class="rounded-sm bg-yellow-200/70"
-								style="width: 16px; height: 16px; animation: windowGlow 3s ease-in-out {w *
-									0.5}s infinite"
-							></div>
-						{/each}
-					</div>
-					<!-- Door -->
-					<div
-						class="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-t-lg"
-						style="width: 24px; height: 32px; background: {darken(building.colour, 0.2)}"
+						class="mx-auto rounded-t-xl"
+						style="width: {building.width}px; height: 20px; background: {building.roofColour}"
 					></div>
+					<!-- Body -->
+					<div
+						class="relative rounded-b-lg"
+						style="width: {building.width}px; height: {building.height}px; background: {building.colour}"
+					>
+						<!-- Emoji sign -->
+						<div class="pt-2 text-center text-3xl">{building.emoji}</div>
+						<!-- Name -->
+						<div
+							class="mt-1 text-center text-xs font-bold text-white drop-shadow"
+							style="text-shadow: 0 1px 2px rgba(0,0,0,0.3)"
+						>
+							{building.name}
+						</div>
+						<!-- Windows -->
+						<div class="mt-2 flex justify-center gap-2">
+							<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
+							{#each { length: Math.min(3, Math.floor(building.width / 40)) } as _, w (w)}
+								<div
+									class="rounded-sm bg-yellow-200/70"
+									style="width: 16px; height: 16px; animation: windowGlow 3s ease-in-out {w *
+										0.5}s infinite"
+								></div>
+							{/each}
+						</div>
+						<!-- Door -->
+						<div
+							class="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-t-lg"
+							style="width: 24px; height: 32px; background: {darken(building.colour, 0.2)}"
+						></div>
+					</div>
 				</div>
-			</div>
-		{/each}
+			{/each}
+		</div>
 	</div>
 
 	<!-- ── Character ── -->
@@ -355,7 +365,7 @@
 
 		<!-- Speech bubble -->
 		<div
-			class="absolute -top-16 left-1/2 z-20 -translate-x-1/2 rounded-2xl bg-white px-4 py-2 text-sm font-bold whitespace-nowrap shadow-lg"
+			class="absolute -top-16 left-1/2 z-20 w-max max-w-[70vw] -translate-x-1/2 rounded-2xl bg-white px-3 py-2 text-center text-sm font-bold whitespace-normal shadow-lg sm:max-w-none sm:px-4 sm:whitespace-nowrap"
 			style="animation: bubbleFloat 3.5s ease-in-out infinite; transform-origin: bottom center"
 		>
 			{currentBubble}
@@ -368,7 +378,7 @@
 		<!-- Fun fact popup -->
 		{#if funFact}
 			<div
-				class="absolute -top-28 left-1/2 z-30 -translate-x-1/2 rounded-xl bg-yellow-300 px-4 py-2 text-xs font-bold whitespace-nowrap text-yellow-900 shadow-lg"
+				class="absolute -top-28 left-1/2 z-30 w-max max-w-[70vw] -translate-x-1/2 rounded-xl bg-yellow-300 px-3 py-2 text-center text-xs font-bold whitespace-normal text-yellow-900 shadow-lg sm:max-w-none sm:px-4 sm:whitespace-nowrap"
 				style="animation: funFactPop 0.3s ease-out both"
 			>
 				💡 {funFact}
@@ -378,4 +388,48 @@
 			</div>
 		{/if}
 	</div>
+</div>
+<!-- ── End scene area ── -->
+
+<!-- ── Info panel (mobile, below scene) ── -->
+<div
+	class="flex justify-center px-3 py-4 md:hidden"
+	style="background: linear-gradient(to bottom, {config.environment.skyBottom}, {darken(config.environment.grassColour, 0.05)}); animation: bannerSlideIn 1s ease-out 0.5s both"
+>
+	<div
+		class="flex w-full max-w-3xl flex-col items-start gap-3 rounded-2xl bg-white/90 px-4 py-3 shadow-xl backdrop-blur-sm sm:flex-row sm:gap-6 sm:px-6 sm:py-4"
+	>
+		<div class="flex-1">
+			<h2 class="mb-2 text-base font-bold text-gray-800">
+				{config.icon} What does {articleForTitle}
+				{config.title} do?
+			</h2>
+			<ul class="space-y-0.5 text-sm text-gray-700">
+				{#each config.info.whatYouDo as item (item)}
+					<li>• {item}</li>
+				{/each}
+			</ul>
+		</div>
+		<div class="flex-shrink-0">
+			<h3 class="mb-1 text-xs font-bold tracking-wide text-gray-500 uppercase">Key Skills</h3>
+			<div class="mb-2 flex flex-wrap gap-1">
+				{#each config.info.keySkills as skill (skill)}
+					<span class="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-800">
+						{skill}
+					</span>
+				{/each}
+			</div>
+			<h3 class="mb-1 text-xs font-bold tracking-wide text-gray-500 uppercase">
+				Useful Subjects
+			</h3>
+			<div class="flex flex-wrap gap-1">
+				{#each config.info.subjects as subject (subject)}
+					<span class="rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800">
+						{subject}
+					</span>
+				{/each}
+			</div>
+		</div>
+	</div>
+</div>
 </div>
